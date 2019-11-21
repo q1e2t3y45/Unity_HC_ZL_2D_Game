@@ -6,6 +6,15 @@ public class gamemanager : MonoBehaviour
 {
     public int score;
     public int bestscore;
+    public GameObject pipe;
+
+    void ClonePipe()
+    {
+        Vector3 PipePosition = new Vector3(2, Random.Range(2,-7), 0);
+        Quaternion PipeQuaternion = new Quaternion(0, 0, 0, 0);
+        Instantiate(pipe, PipePosition, PipeQuaternion);
+    }
+
     void GetPoint()
     {
 
@@ -17,5 +26,10 @@ public class gamemanager : MonoBehaviour
     void GameOver()
     {
 
+    }
+
+    private void Start()
+    {
+        InvokeRepeating("ClonePipe", 0, 1);
     }
 }
