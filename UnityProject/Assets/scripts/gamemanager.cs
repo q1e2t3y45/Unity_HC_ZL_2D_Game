@@ -10,7 +10,7 @@ public class gamemanager : MonoBehaviour
 
     void ClonePipe()
     {
-        Vector3 PipePosition = new Vector3(2, Random.Range(2,-7), 0);
+        Vector3 PipePosition = new Vector3(2, Random.Range(1,-3), 0);
         Quaternion PipeQuaternion = new Quaternion(0, 0, 0, 0);
         Instantiate(pipe, PipePosition, PipeQuaternion);
     }
