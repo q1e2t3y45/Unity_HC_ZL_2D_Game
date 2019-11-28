@@ -30,6 +30,6 @@ public class gamemanager : MonoBehaviour
 
     private void Start()
     {
-        InvokeRepeating("ClonePipe", 0, 1);
+        InvokeRepeating("ClonePipe", 0 ,0.5f);
     }
 }

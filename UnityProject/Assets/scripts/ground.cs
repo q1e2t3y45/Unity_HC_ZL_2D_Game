@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ground : MonoBehaviour
 {
-    public float speed = 3f;
+    public float speed = 10f;
     public Transform trans;
     void Move()
     {
