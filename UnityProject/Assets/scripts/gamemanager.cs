@@ -6,7 +6,7 @@ public class gamemanager : MonoBehaviour
 {
     public int score;
     public int bestscore;
-    public GameObject pipe;
+    public GameObject pipe ,UI;
 
     void ClonePipe()
     {
@@ -23,9 +23,9 @@ public class gamemanager : MonoBehaviour
     {
 
     }
-    void GameOver()
+    public void GameOver()
     {
-
+        UI.SetActive(true);
     }
 
     private void Start()
