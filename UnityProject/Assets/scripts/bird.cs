@@ -16,7 +16,7 @@ public class bird : MonoBehaviour
     void Jump()
     {
         if (dead) return;
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0) && gamemanager.nightmare)
         {
             Score.SetActive(true);
             GameManager.SetActive(true);
@@ -42,6 +42,13 @@ public class bird : MonoBehaviour
         Jump();
     }
 
+    private void Start()
+    {
+        Screen.SetResolution(720, 1280, false);
+        gamemanager.buttonbasic.SetActive(true);
+        gamemanager.buttonadvance.SetActive(true);
+        gamemanager.buttonnightmare.SetActive(true);
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Dead();

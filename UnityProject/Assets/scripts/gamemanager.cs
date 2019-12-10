@@ -7,9 +7,10 @@ public class gamemanager : MonoBehaviour
 {
     public int score;
     public int bestscore;
-    public GameObject pipe ,UI;
+    public GameObject pipe ,UI ,buttonbasic ,buttonadvance ,buttonnightmare;
     public Text scoretext ,bestscoretext;
     public ground ground;
+    public bool basic = false, advance = false, nightmare = false;
 
     void ClonePipe()
     {
@@ -39,6 +40,24 @@ public class gamemanager : MonoBehaviour
         BestScoreSet();
     }
 
+    public void Replay()
+    {
+        Application.LoadLevel("123");
+        ground.speed = 10f;
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
+    public void choosenightmare()
+    {
+        nightmare = true;
+        buttonbasic.SetActive(false);
+        buttonadvance.SetActive(false);
+        buttonnightmare.SetActive(false);
+    }
     private void Start()
     {
         InvokeRepeating("ClonePipe", 0.5f ,0.5f);
